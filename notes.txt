@@ -41,3 +41,4 @@ taxminan shunday ko'rinishda bo'ladi
 4. getOne, remove kabi funksiyalarni ishlatayotganda id qabul qilamiz, agar bu id number bo'lsa, biz qabul qilayotgan stringdagi id ni numberga o'tkazish murakkablik tug'diradi. Shuning uchun transform: true kodni ham yuqoridaagi kodlarimizga qo'shamiz. Buning vazifasi, agar bizga string kelsa, undagi ma'lumot esa number bo'lsa, bu kod shu ma'lumotimizni numberga o'tkazib beradi
 5. Transform ni qo'shganimizdan keyin service va controllerdagi id: string larni numberga o'tkazib chiqdik
 
+Dependency Injection: bazan ishlatayotgan obyektimizning type sini ko'rsatmasak funksiya ishlamasligi mumkin
