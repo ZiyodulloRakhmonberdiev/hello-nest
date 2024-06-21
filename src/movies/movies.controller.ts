@@ -1,3 +1,4 @@
+import { CreateMovieDto } from './dto/create-movie.dto';
 import { Movie } from './entities/movie.entity';
 import { MoviesService } from './movies.service';
 import {
@@ -29,9 +30,8 @@ export class MoviesController {
   getOne(@Param('id') id: string): Movie {
     return this.moviesService.getOne(id);
   }
-
   @Post()
-  create(@Body() movieData) {
+  create(@Body() movieData: CreateMovieDto) {
     return this.moviesService.create(movieData);
   }
 
