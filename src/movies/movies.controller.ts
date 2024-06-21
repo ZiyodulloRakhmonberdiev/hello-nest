@@ -1,4 +1,5 @@
 import { CreateMovieDto } from './dto/create-movie.dto';
+import { UpadateMovieDto } from './dto/update-movie.dto';
 import { Movie } from './entities/movie.entity';
 import { MoviesService } from './movies.service';
 import {
@@ -39,9 +40,8 @@ export class MoviesController {
   remove(@Param('id') id: number) {
     return this.moviesService.remove(id);
   }
-
   @Patch(':id')
-  patch(@Param('id') id: number, @Body() updateData) {
+  patch(@Param('id') id: number, @Body() updateData: UpadateMovieDto) {
     return this.moviesService.patch(id, updateData);
   }
 }
