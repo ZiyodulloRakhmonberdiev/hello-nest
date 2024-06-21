@@ -1,0 +1,43 @@
+Hello Nest
+
+I have changed .eslintrc.js on rules all off's to on because red line dangers leave
+
+DTO - data transfer object
+
+Nest js va uning arxitekturasi
+
+1. Nest JS Node js ustiga qurilgan, unda ko'p qo'l bilan yozish kerak bo'lgan muammolar avvaldan tayyorlab qo'yilgan
+2. Loyihadagi asosiy fayl main.ts hisoblanadi
+3. app.module.ts fayli esa barcha modullarni o'zida saqlaydi
+4. Barcha funksiyalar services fayllarida yoziladi
+5. Controller faylida esa service faylida yozilgan funksiyalar chaqirilib, foydalaniladi
+6. Controller faylida har bir funksiyani yozishdan avval uning request metodi nomini yozish shart (@Post)
+7. Ushbu request metodi Decorator deb ataladi
+
+Foydalanuvchi so'rov yuborishidagi qoidalar
+1. DTO Data Transfer Object hosil qilishimiz kerak. Bu bizga foydalanuvchi faqat biz belgilagan ma'lumot turlarini yubora olish,
+qolgan oshiqcha ma'lumotlarni qaytarish imkonini beradi
+2. DTO huddi interface larga o'xshab ketadi
+3. DTO bizga type larni aniqlab beradi, ammo validation qilib bermaydi, ya'ni shunchaki DTO hosil qilish yetarli emas
+4. Validation qo'shish uchun esa main.ts (eng asosiy fayl)ga Pipe qo'shish kerak
+5. app.useGlobalPipes(new ValidationPipe()); shu kod orqali validation o'rnatamiz. Ammo buning uchun class-validatorni o'rnatishimiz kerak
+6. O'rnatish npm i class-validator class-transformer
+7. Endi DTO faylda barcha typelarni validation qilib chiqamiz
+
+Pipe
+1. app.useGlobalPipes(new ValidationPipe()); ushbu codni main.js ga qo'shganimizda u bizga 
+validatsiya imkonini beradi. Ya'ni foydalanuvchi bizgaa yuborgan ma'lumotning turlariga qarab
+saralaydi va mos kelmaydiganini qaytarib yuboradi 
+2. app.useGlobalPipes(new ValidationPipe({
+    whitelist: true,})); bu kod esa aga user bizga noaniq ma'lumotlarni yuborsa hatto validatorga ham yetib kelishini oldini oladi va uni kesadi
+3. Yuqoridagi codga forbidNonWhitelisted: true, buni qo'shsak yanada kuchliroq himoya qiladi, va bizga qaytgan responseda aynan qaysi property yuborilayotgani va qaytarilganligi haqida ham ma'lumot chiqadi
+	"message": [
+		"property hacker should not exist",
+		"title must be a string",
+		"year must be a number conforming to the specified constraints",
+		"each value in genres must be a string"
+	],
+taxminan shunday ko'rinishda bo'ladi
+4. getOne, remove kabi funksiyalarni ishlatayotganda id qabul qilamiz, agar bu id number bo'lsa, biz qabul qilayotgan stringdagi id ni numberga o'tkazish murakkablik tug'diradi. Shuning uchun transform: true kodni ham yuqoridaagi kodlarimizga qo'shamiz. Buning vazifasi, agar bizga string kelsa, undagi ma'lumot esa number bo'lsa, bu kod shu ma'lumotimizni numberga o'tkazib beradi
+5. Transform ni qo'shganimizdan keyin service va controllerdagi id: string larni numberga o'tkazib chiqdik
+
