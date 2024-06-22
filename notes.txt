@@ -42,3 +42,6 @@ taxminan shunday ko'rinishda bo'ladi
 5. Transform ni qo'shganimizdan keyin service va controllerdagi id: string larni numberga o'tkazib chiqdik
 
 Dependency Injection: bazan ishlatayotgan obyektimizning type sini ko'rsatmasak funksiya ishlamasligi mumkin
+
+Tests
+it = induvidual test
