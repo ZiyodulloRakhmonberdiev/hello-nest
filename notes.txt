@@ -44,4 +44,6 @@ taxminan shunday ko'rinishda bo'ladi
 Dependency Injection: bazan ishlatayotgan obyektimizning type sini ko'rsatmasak funksiya ishlamasligi mumkin
 
 Tests
-it = induvidual test
+1. it = induvidual test
+2. har bir funksiya uchun yangi describe ochib ishlaymiz va uning ichida funksiyalarni it orqali test qilamiz
+3. 404 qaytarmoqchi bo'lsak buni try catch blocklari ichida yozishimiz mumkin
