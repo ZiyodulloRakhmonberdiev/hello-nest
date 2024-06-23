@@ -47,3 +47,4 @@ Tests
 1. it = induvidual test
 2. har bir funksiya uchun yangi describe ochib ishlaymiz va uning ichida funksiyalarni it orqali test qilamiz
 3. 404 qaytarmoqchi bo'lsak buni try catch blocklari ichida yozishimiz mumkin
+4. E2E testda id  bilan biror narsa olmoqchi bo'lsak, funksiya yuqorisida yangi app yaratilayotganiga ahamiyat berish kerak. Ya'ni, test vaqtida bizda yangi app yaratiladi. Bu holatda main.ts dagi app ga tegishli Pipe larni yangi yaratgan app ga ham qo'llab qo'yish kerak. Bo'lmasa xato qaytaradi. Masalan, biz movie ning id sini raqam ko'rinishida kutsak, u bizga odatda string qaytaradi va Pipe orqali u aftomatik ravishda raqam turiga aylanadi. Yangi yaratilgan app bilan asosiy app (main.tsdagi) imkon qadar bir-biriga o'xshash parametrlarga ega bo'lishi kerak
